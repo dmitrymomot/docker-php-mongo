@@ -1,6 +1,6 @@
 FROM php:fpm
 
-RUN apt-get install pkg-config libssl-dev libsslcommon2-dev \
+RUN apt-get update && apt-get upgrade -y && apt-get install -y pkg-config libssl-dev \
     && pecl install mongodb \
     && pecl install xdebug \
     && docker-php-ext-enable mongodb xdebug
