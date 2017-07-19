@@ -1,5 +1,6 @@
 FROM php:fpm
 
-RUN pecl install mongodb \
+RUN apt-get install pkg-config \
+    && pecl install mongodb \
     && pecl install xdebug \
     && docker-php-ext-enable mongodb xdebug
